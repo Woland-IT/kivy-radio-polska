@@ -90,7 +90,8 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip setuptools wheel
-        pip install "buildozer @ git+https://github.com/kivy/buildozer.git@master" cython==3.0.11 virtualenv
+        pip install "cython==0.29.34" "virtualenv"
+        pip install "buildozer @ git+https://github.com/kivy/buildozer.git@master"
 
     - name: Set Buildozer spec versions
       run: |
