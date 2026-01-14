@@ -500,3 +500,8 @@ warn_on_root = 1
 #        buildozer --profile demo android debug
 #
 #   Environment variable overrides have priority over profile overrides.
+
+android.release_artifact = aab
+android.gradle_dependencies = 
+android.add_gradle_repositories =
+android.release = 1  # Włącz dla [release] w commicie

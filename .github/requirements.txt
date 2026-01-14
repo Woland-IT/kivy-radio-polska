@@ -1,0 +1,5 @@
+buildozer==1.6.1
+Cython==3.0.11
+kivy==2.3.1
+kivymd==2.0.1.dev0
+pyradios==0.2.4

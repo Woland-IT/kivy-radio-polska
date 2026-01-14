@@ -3,3 +3,15 @@ __pycache__/
 .bin/
 build/
 .dist/
+
+# Buildozer
+.buildozer/
+buildozer/.buildozer/
+bin/
+.gradle/
+local.properties
+*.aab
+*.apk
+
+# GitHub Actions
+.github/workflows/build-*.yml
