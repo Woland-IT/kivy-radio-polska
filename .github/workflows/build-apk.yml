@@ -105,7 +105,7 @@ jobs:
       id: build
       uses: digreatbrian/buildozer-action@v1
       with:
-        buildozer-cmd: android debug
+        buildozer-cmd: buildozer android debug
         python-version: '3.11'
         workdir: .
 
