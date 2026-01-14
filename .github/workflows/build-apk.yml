@@ -95,12 +95,11 @@ jobs:
 
     - name: Build APK with Buildozer (${{ matrix.arch }})
       id: build
-      uses: ArtemSBulgakov/buildozer-action@v1.8.0
+      uses: digreatbrian/buildozer-action@v1
       with:
-        command: android debug
-        workdir: .
-        buildozer_version: stable
-        buildozer_branch: master
+        buildozer-cmd: android debug
+        python-version: '3.11'
+        work-dir: .
 
     - name: Fix APK filename & permissions
       if: steps.build.outputs.file != ''
