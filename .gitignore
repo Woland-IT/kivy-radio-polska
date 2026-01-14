@@ -13,3 +13,7 @@ local.properties
 *.aab
 *.apk
 
+# Android SDK files
+cmdline-tools.zip
+android-commandlinetools/
+

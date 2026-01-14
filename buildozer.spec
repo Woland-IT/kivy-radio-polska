@@ -42,7 +42,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.3.1,kivymd==2.0.1.dev0,ffpyplayer,pyradios,pyjnius
+requirements = python3,kivy==2.3.1,kivymd==1.2.0,ffpyplayer,pyradios,pyjnius
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -119,8 +119,6 @@ android.build_tools = 35.0.0
 # (int) Minimum API your APK / AAB will support.
 #android.minapi = 24
 android.minapi = 24
-android.minapi = 21
-android.minapi = 24
 
 # (int) Android SDK version to use
 #android.sdk = 20
@@ -133,18 +131,18 @@ android.minapi = 24
 android.ndk_api = 24
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-#android.ndk_path =
+android.ndk_path = /opt/homebrew/share/android-commandlinetools/ndk/25.2.9519653
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
-#android.sdk_path =
+android.sdk_path = /opt/homebrew/share/android-commandlinetools
 
 # (str) ANT directory (if empty, it will be automatically downloaded.)
-#android.ant_path =
+android.ant_path =
 
 # (bool) If True, then skip trying to update the Android SDK
 # This can be useful to avoid excess Internet downloads or save time
 # when an update is due and you just want to test/build your package
-# android.skip_update = False
+android.skip_update = True
 
 # (bool) If True, then automatically accept SDK license
 # agreements. This is intended for automation only. If set to False,
@@ -301,7 +299,6 @@ android.accept_sdk_license = True
 
 # (list) The Android archs to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 # In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.
-android.archs = arm64-v8a, armeabi-v7a
 android.archs = arm64-v8a
 
 # (int) overrides automatic versionCode computation (used in build.gradle)
