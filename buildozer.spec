@@ -111,11 +111,16 @@ android.permissions = INTERNET,FOREGROUND_SERVICE
 
 # (int) Target Android API, should be as high as possible.
 #android.api = 33
-android.api = 33
+android.api = 34
+
+# (str) Android build tools version to use
+android.build_tools = 35.0.0
 
 # (int) Minimum API your APK / AAB will support.
 #android.minapi = 24
+android.minapi = 24
 android.minapi = 21
+android.minapi = 24
 
 # (int) Android SDK version to use
 #android.sdk = 20
@@ -125,7 +130,7 @@ android.minapi = 21
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
-android.ndk_api = 21
+android.ndk_api = 24
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
 #android.ndk_path =
@@ -146,6 +151,7 @@ android.ndk_api = 21
 # the default, you will be shown the license when first running
 # buildozer.
 # android.accept_sdk_license = False
+android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.kivy.android.PythonActivity
@@ -296,6 +302,7 @@ android.ndk_api = 21
 # (list) The Android archs to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 # In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.
 android.archs = arm64-v8a, armeabi-v7a
+android.archs = arm64-v8a
 
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
