@@ -1,0 +1,47 @@
+<Minimalradio>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 16
+        spacing: 12
+
+        MDTextField:
+            id: search_field
+            hint_text: "Szukaj stacji (RMF, Eska, rock...)"
+            mode: "rectangle"
+
+        MDFilledButton:
+            text: "Szukaj"
+            on_release: root.on_search()
+
+        MDLabel:
+            id: results_label
+            text: "Wyniki wyszukiwania pojawią się tutaj"
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        ScrollView:
+            MDList:
+                id: results_list   # ← tu będą stacje
+
+        MDBoxLayout:
+            size_hint_y: None
+            height: 80
+            padding: 16
+            spacing: 16
+
+            MDIconButton:
+                id: play_button
+                icon: "play"
+                theme_text_color: "Custom"
+                text_color: 0, 0.6, 1, 1
+                on_release: root.toggle_play()
+
+            MDIconButton:
+                icon: "stop"
+                on_release: root.stop()
+
+            MDLabel:
+                id: status
+                text: "Nic nie gra"
+                halign: "center"
