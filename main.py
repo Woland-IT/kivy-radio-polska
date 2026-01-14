@@ -1,4 +1,5 @@
 import os
+os.environ["SDL_AUDIODRIVER"] = "android"
 os.environ["KIVY_AUDIO"] = "ffpyplayer"
 
 from kivymd.app import MDApp
