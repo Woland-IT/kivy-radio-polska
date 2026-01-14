@@ -28,7 +28,11 @@ env:
 jobs:
   build:
     name: Build APK/AAB (Android API 33)
+<<<<<<< HEAD
     runs-on: ubuntu-24.04  # Najnowszy Ubuntu 2026
+=======
+    runs-on: ubuntu-22.04  # Ubuntu 22.04 for compatibility
+>>>>>>> 78f66f04f21de0a2501d9c209ea328c12af18c48
 
     strategy:
       matrix:
@@ -47,6 +51,7 @@ jobs:
         python-version: '3.11'
         cache: 'pip'
 
+<<<<<<< HEAD
     - name: Install system dependencies (Ubuntu 24.04)
       run: |
         sudo apt-get update
@@ -63,6 +68,31 @@ jobs:
           cmake \
           libffi-dev \
           libssl-dev
+=======
+    # - name: Install system dependencies (Ubuntu 24.04)
+    #   run: |
+    #     sudo apt-get update -y
+    #     sudo apt-get install -y --no-install-recommends \
+    #       openjdk-17-jdk-headless \
+    #       build-essential \
+    #       git \
+    #       zip \
+    #       unzip \
+    #       curl \
+    #       cmake \
+    #       libffi-dev \
+    #       libssl-dev \
+    #       python3-dev \
+    #       pkg-config \
+    #       libncurses6 \
+    #       libncursesw6 \
+    #       libtinfo6 \
+    #       zlib1g-dev \
+    #       liblzma-dev \
+    #       libbz2-dev \
+    #       libreadline-dev \
+    #       libsqlite3-dev
+>>>>>>> 78f66f04f21de0a2501d9c209ea328c12af18c48
 
     - name: Cache Python & Buildozer
       uses: actions/cache@v4
@@ -82,8 +112,14 @@ jobs:
 
     - name: Install Python dependencies
       run: |
+<<<<<<< HEAD
         python -m pip install --upgrade pip setuptools wheel Cython==3.0.11
         pip install --only-binary=all buildozer==1.6.1 cython==3.0.11 virtualenv
+=======
+        python -m pip install --upgrade pip setuptools wheel
+        pip install "cython==0.29.34" "virtualenv"
+        pip install "buildozer @ git+https://github.com/kivy/buildozer.git@master"
+>>>>>>> 78f66f04f21de0a2501d9c209ea328c12af18c48
 
     - name: Set Buildozer spec versions
       run: |
@@ -95,12 +131,20 @@ jobs:
 
     - name: Build APK with Buildozer (${{ matrix.arch }})
       id: build
+<<<<<<< HEAD
       uses: ArtemSBulgakov/buildozer-action@v1.8.0
       with:
         command: android debug
         workdir: .
         buildozer_version: stable
         buildozer_branch: master
+=======
+      uses: digreatbrian/buildozer-action@v1
+      with:
+        buildozer-cmd: buildozer android debug
+        python-version: '3.11'
+        workdir: .
+>>>>>>> 78f66f04f21de0a2501d9c209ea328c12af18c48
 
     - name: Fix APK filename & permissions
       if: steps.build.outputs.file != ''
