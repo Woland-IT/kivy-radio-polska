@@ -28,7 +28,7 @@ env:
 jobs:
   build:
     name: Build APK/AAB (Android API 33)
-    runs-on: ubuntu-24.04  # Najnowszy Ubuntu 2026
+    runs-on: ubuntu-22.04  # Ubuntu 22.04 for compatibility
 
     strategy:
       matrix:
@@ -47,29 +47,29 @@ jobs:
         python-version: '3.11'
         cache: 'pip'
 
-    - name: Install system dependencies (Ubuntu 24.04)
-      run: |
-        sudo apt-get update -y
-        sudo apt-get install -y --no-install-recommends \
-          openjdk-17-jdk-headless \
-          build-essential \
-          git \
-          zip \
-          unzip \
-          curl \
-          cmake \
-          libffi-dev \
-          libssl-dev \
-          python3-dev \
-          pkg-config \
-          libncurses6 \
-          libncursesw6 \
-          libtinfo6 \
-          zlib1g-dev \
-          liblzma-dev \
-          libbz2-dev \
-          libreadline-dev \
-          libsqlite3-dev
+    # - name: Install system dependencies (Ubuntu 24.04)
+    #   run: |
+    #     sudo apt-get update -y
+    #     sudo apt-get install -y --no-install-recommends \
+    #       openjdk-17-jdk-headless \
+    #       build-essential \
+    #       git \
+    #       zip \
+    #       unzip \
+    #       curl \
+    #       cmake \
+    #       libffi-dev \
+    #       libssl-dev \
+    #       python3-dev \
+    #       pkg-config \
+    #       libncurses6 \
+    #       libncursesw6 \
+    #       libtinfo6 \
+    #       zlib1g-dev \
+    #       liblzma-dev \
+    #       libbz2-dev \
+    #       libreadline-dev \
+    #       libsqlite3-dev
 
     - name: Cache Python & Buildozer
       uses: actions/cache@v4
@@ -107,7 +107,7 @@ jobs:
       with:
         buildozer-cmd: android debug
         python-version: '3.11'
-        work-dir: .
+        workdir: .
 
     - name: Fix APK filename & permissions
       if: steps.build.outputs.file != ''
