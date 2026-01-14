@@ -49,7 +49,7 @@ jobs:
 
     - name: Install system dependencies (Ubuntu 24.04)
       run: |
-        sudo apt-get update
+        sudo apt-get update -y
         sudo apt-get install -y --no-install-recommends \
           openjdk-17-jdk-headless \
           build-essential \
@@ -57,12 +57,19 @@ jobs:
           zip \
           unzip \
           curl \
-          libncurses5-dev \
-          libncursesw5-dev \
-          libtinfo5 \
           cmake \
           libffi-dev \
-          libssl-dev
+          libssl-dev \
+          python3-dev \
+          pkg-config \
+          libncurses6 \
+          libncursesw6 \
+          libtinfo6 \
+          zlib1g-dev \
+          liblzma-dev \
+          libbz2-dev \
+          libreadline-dev \
+          libsqlite3-dev
 
     - name: Cache Python & Buildozer
       uses: actions/cache@v4
