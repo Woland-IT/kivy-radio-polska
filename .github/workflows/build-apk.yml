@@ -28,11 +28,7 @@ env:
 jobs:
   build:
     name: Build APK/AAB (Android API 33)
-<<<<<<< HEAD
-    runs-on: ubuntu-24.04  # Najnowszy Ubuntu 2026
-=======
     runs-on: ubuntu-22.04  # Ubuntu 22.04 for compatibility
->>>>>>> 78f66f04f21de0a2501d9c209ea328c12af18c48
 
     strategy:
       matrix:
